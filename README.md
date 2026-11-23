@@ -80,7 +80,10 @@ Run all tests from the repo root:
 go test ./...
 ```
 
+**New to DSA? Start with [`coding/go/basics/`](coding/go/basics/README.md)**: Go essentials, Big-O, a 5-step problem approach, and 8 warm-up exercises. Do those before the problems below.
+
 | # | Problem | Pattern | Status |
 |---|---|---|---|
+| 0 | [Basics: 8 warm-ups](coding/go/basics) | Loops, maps, two pointers, sliding window | ⬜ |
 | 1 | [Two Sum](coding/go/arrays/twosum) | Hash map | ⬜ |
 | 2 | [Valid Anagram](coding/go/arrays/validanagram) | Counting | ⬜ |
