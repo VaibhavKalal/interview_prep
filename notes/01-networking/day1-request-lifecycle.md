@@ -2,6 +2,8 @@
 
 A classic opener. It can go as deep as the interviewer wants, so know each step.
 
+> **New to the basics?** Read [Day 0: Networking foundations](day0-foundations.md) first: packets, layers, ports, sockets, round trips, TLS, and blocking I/O.
+
 ## 1. DNS resolution
 - Browser cache → OS cache → recursive resolver (ISP or 8.8.8.8)
 - Resolver asks: root server → `.com` TLD server → authoritative server for `example.com`
@@ -52,12 +54,12 @@ A classic opener. It can go as deep as the interviewer wants, so know each step.
 
 ## My answers
 
-1.
-2.
-3.
+1. DNS resolution isn't cached for the first request so it goes through the entire flow to fetch the ip. TCP and TLS handshake add to the time for the initial request.
+2. L4 is a network layer load balancer which routes based on ip and port, L7 is application layer load balancer which can parse http payload that enable advanced routing based on path. L7 is useful routing is to be performed baised on path, as it can parse the requests we can introduce security features like firewall or ratelimiting.
+3. As Node.js is single threaded if execution take 2 seconds the thread will be block for that time, rendering the application un-responsive. In case of PHP-FPM as the request is served by the pool of workers even if the execution is block then consicutive requests are served by the other workers from the pool. In case of go requests are served by go routine each are executed by the os threads if any of the thread is blocked the request is served by the other available thread.
 
 ## My 3-line summary
 
--
--
--
+- Any requests go through following lifecycle i.e. DNS resolution -> TCP handshake -> TLS handshake -> HTTP Request -> Load Balancer -> Application Server -> Database -> response.
+- There are two types of load balancers i.e. L4 (network layer) and L7 (application layer)
+- As Node.js is single threaded if execution take 2 seconds the thread will be block for that time, rendering the application un-responsive. In case of PHP-FPM as the request is served by the pool of workers even if the execution is block then consicutive requests are served by the other workers from the pool. In case of go requests are served by go routine each are executed by the os threads if any of the thread is blocked the request is served by the other available thread.

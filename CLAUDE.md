@@ -9,6 +9,9 @@ the shared memory**: progress lives in `README.md` checkboxes, `mistakes.md`, an
 - Loves backend, architecture, DevOps.
 - Built a notification system on AWS SQS (main project for system design and behavioral rounds).
 - New to DSA/LeetCode: starting from `coding/go/basics/` before real problems.
+- Wants fundamentals first: notes that only summarize at a high level don't work for them. Before a
+  topic, make sure the base concepts it rests on are explained (see `notes/01-networking/day0-foundations.md`
+  for the expected depth), and add a foundations section to a module's notes when it's missing.
 
 ## Start of every session
 1. `git pull` to get work done from the other machine.
