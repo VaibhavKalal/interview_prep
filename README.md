@@ -5,72 +5,46 @@ Stack: Node.js, PHP, Go (learning).
 
 ## How to use this repo
 
-- **Daily:** one topic session (notes) + one coding problem in Go (`coding/go`).
-- **After every session:** write 3 lines in your own words in the week's notes folder.
+- **Plan:** a 14-week deep plan in [`plan/`](plan/README.md). Each module has three depth levels
+  (use → internals → production), a hands-on lab, primary reading, and a self-test.
+- **Daily:** ~1h on the current module + ~1h on the [DSA track](plan/14-dsa-track.md) in Go.
+- **Weekend:** the module's lab (`labs/`) and its self-test, reviewed with Claude.
 - **Got something wrong?** Add it to [`mistakes.md`](mistakes.md). Review it every Sunday.
 
 ## Layout
 
 | Folder | What goes there |
 |---|---|
-| `notes/weekN-*/` | Lessons and your own summaries |
+| `plan/` | The 14 modules: checklists, labs, reading, self-tests |
+| `notes/<module>/` | Your explanations in your own words |
+| `labs/<module>/` | Hands-on builds (Go), including what you broke and observed |
 | `system-design/` | One file per design, using [`_template.md`](system-design/_template.md) |
 | `stories/` | STAR stories for behavioral rounds |
-| `coding/go/` | Go solutions with table-driven tests |
+| `coding/go/` | DSA solutions with table-driven tests |
 | `mistakes.md` | Everything you got wrong, and the correct answer |
 
-## 6-week plan
+## 14-week tracker
 
-### Week 1 — Fundamentals
-- [ ] Day 1: What happens when you hit a URL (DNS, TCP, TLS, HTTP, LB) — [notes](notes/week1-fundamentals/day1-request-lifecycle.md)
-- [ ] Day 2: Processes, threads, I/O models (blocking, non-blocking, epoll)
-- [ ] Day 3: HTTP deep-dive: methods, status codes, idempotency, caching headers, HTTP/1.1 vs 2 vs 3
-- [ ] Day 4: TCP vs UDP, WebSockets, long polling, SSE
-- [ ] Day 5: Load balancing algorithms, reverse proxies, CDNs
-- [ ] Day 6: Auth basics: sessions vs JWT, OAuth2, hashing vs encryption
-- [ ] Day 7: Review week + mistakes.md
+Tick a week when its module checklist, lab, and self-test are done.
 
-### Week 2 — Databases
-- [ ] SQL refresher: joins, group by, window functions
-- [ ] Indexes: B-tree, composite indexes, leftmost prefix, covering indexes, `EXPLAIN`
-- [ ] Transactions, ACID, isolation levels and anomalies, MVCC
-- [ ] Normalization vs denormalization, N+1 problem, connection pooling
-- [ ] Redis: data types, eviction, persistence, use cases
-- [ ] SQL vs NoSQL (DynamoDB, MongoDB, Cassandra): when and why
-- [ ] Replication and sharding basics
+| Week | Module | DSA pattern | Done |
+|---|---|---|---|
+| 1 | [01 Networking & HTTP](plan/01-networking-http.md) | Basics: Go, Big-O, warm-ups | ⬜ |
+| 2 | [02 OS, Concurrency & I/O](plan/02-os-concurrency-io.md) | Arrays & hashing | ⬜ |
+| 3 | [03 Databases](plan/03-databases.md) (part 1: SQL, indexes, storage) | Two pointers | ⬜ |
+| 4 | [03 Databases](plan/03-databases.md) (part 2: transactions, MVCC, replication) | Sliding window | ⬜ |
+| 5 | [04 Caching, Redis & NoSQL](plan/04-caching-nosql.md) | Stack | ⬜ |
+| 6 | [05 Node.js Internals + PHP-FPM](plan/05-nodejs-php.md) | Binary search | ⬜ |
+| 7 | [06 Go, In Depth](plan/06-go.md) | Linked lists + LRU cache | ⬜ |
+| 8 | [07 Distributed Systems](plan/07-distributed-systems.md) | Trees | ⬜ |
+| 9 | [08 Messaging & Event-Driven](plan/08-messaging.md) | Heaps | ⬜ |
+| 10 | [09 Architecture & Resilience](plan/09-architecture-resilience.md) | Graphs | ⬜ |
+| 11 | [10 System Design Practice](plan/10-system-design.md) (problems 1–5) | Intervals + greedy | ⬜ |
+| 12 | [10 System Design Practice](plan/10-system-design.md) (problems 6–10) | Backtracking | ⬜ |
+| 13 | [11 DevOps & Cloud](plan/11-devops-cloud.md) + [12 Observability](plan/12-observability-reliability.md) | 1-D DP | ⬜ |
+| 14 | [13 Behavioral & Mock Loops](plan/13-behavioral-mocks.md) | Review + timed mocks | ⬜ |
 
-### Week 3 — Stack deep-dive
-- [ ] Node.js event loop phases, microtasks vs macrotasks, libuv thread pool
-- [ ] Node.js streams, backpressure, worker threads vs cluster, memory leaks
-- [ ] PHP-FPM process model, OPcache, shared-nothing architecture
-- [ ] Go: goroutines, GMP scheduler, channels vs mutexes
-- [ ] Go: `context`, `select`, `errgroup`, race detector
-- [ ] API design: REST, gRPC, GraphQL, pagination, versioning, error formats
-
-### Week 4 — Distributed systems
-- [ ] Caching strategies, invalidation, cache stampede
-- [ ] Message queues: SQS vs Kafka vs RabbitMQ, delivery guarantees, DLQs
-- [ ] Idempotency, retries with backoff and jitter, timeouts
-- [ ] CAP / PACELC, consistency models
-- [ ] Rate limiting algorithms (token bucket, sliding window)
-- [ ] Outbox pattern, sagas, distributed locks
-
-### Week 5 — System design practice
-- [ ] Framework: requirements, estimates, API, data model, design, deep dives
-- [ ] **Your notification system (SQS)** — [file](system-design/notification-system.md)
-- [ ] URL shortener
-- [ ] Rate limiter
-- [ ] Chat system
-- [ ] News feed
-- [ ] Payment system
-
-### Week 6 — DevOps, behavioral, mocks
-- [ ] Docker: layers, multi-stage builds
-- [ ] Kubernetes: pods, deployments, services, probes, HPA
-- [ ] CI/CD, blue-green and canary deploys
-- [ ] Observability: logs, metrics, traces, SLIs/SLOs
-- [ ] 6–8 STAR stories written — [stories/](stories/)
-- [ ] 2 full mock loops
+**Start here:** [Module 01](plan/01-networking-http.md) + [`coding/go/basics`](coding/go/basics/README.md).
 
 ## Coding progress (Go)
 

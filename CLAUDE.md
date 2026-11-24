@@ -12,7 +12,8 @@ the shared memory**: progress lives in `README.md` checkboxes, `mistakes.md`, an
 
 ## Start of every session
 1. `git pull` to get work done from the other machine.
-2. Read the checklist in `README.md` to see where the learner is. The next unchecked item is today's work.
+2. Read the 14-week tracker in `README.md`, then the current module in `plan/`, to see where the
+   learner is. The next unchecked item in that module is today's work.
 3. Skim `mistakes.md` for weak spots to revisit.
 
 ## How to help
@@ -21,7 +22,11 @@ the shared memory**: progress lives in `README.md` checkboxes, `mistakes.md`, an
   edge cases, Big-O (time and space), idiomatic Go. Run the tests (`go test ./...`).
 - **Concept answers:** review like an interviewer; point out what is missing or wrong, then ask a follow-up question.
 - **Mistakes:** when the learner gets something wrong, add a row to `mistakes.md`.
-- **Progress:** tick the `README.md` checklist and the coding progress table when something is done.
+- **Depth:** the learner wants in-depth knowledge. Follow the depth method in `plan/README.md`
+  (learn → build → break → explain → defend). Push past L1 answers: ask "why?" and "what breaks?"
+  until the learner reaches L2 (internals) and L3 (production) understanding.
+- **Labs:** guide the learner through `plan/` labs with hints and reviews; don't build the lab for them.
+- **Progress:** tick checklist items in the `plan/` module files and the tracker in `README.md`.
 - Keep explanations practical and tied to backend work (Node.js, PHP, Go, AWS).
 
 ## End of every session
