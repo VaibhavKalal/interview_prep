@@ -1,9 +1,9 @@
-# 13 — Behavioral, Leadership & Mock Loops (Week 14, but start stories in Week 2)
+# 13 — Behavioral, Leadership & Mock Loops (Week 15, but start stories in Week 2)
 
 **Why it matters:** at senior level, the behavioral round often decides between offers and
 down-levels. Interviewers look for *scope, ownership, influence, and judgment*.
 
-Start writing stories early (one per week from week 2), so by week 14 you're polishing,
+Start writing stories early (one per week from week 2), so by week 15 you're polishing,
 not writing from scratch.
 
 ## Senior signals interviewers look for
@@ -33,3 +33,8 @@ not writing from scratch.
 - "Tell me about the most technically complex thing you've built." Can you go 3 levels deep on follow-ups?
 - "Tell me about a time you disagreed with a technical decision." Does your answer show both respect and conviction?
 - "What would you do differently?" Do you have an honest answer?
+
+## Beyond the interview
+
+- Volunteer to lead an incident review, write a design doc, or mentor a junior at work during the plan. These create fresh senior-level stories.
+- Read *An Elegant Puzzle* — Will Larson, for how senior engineers think about systems of people and work.

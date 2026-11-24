@@ -44,3 +44,9 @@ RAM ~100ns, SSD read ~100µs, same-datacenter round trip ~0.5ms, cross-continent
 
 ## Self-test
 - Can you do any problem from the list in 45 minutes without notes, and handle "what if traffic grows 100x?" and "what if this component dies?"
+
+## Beyond the interview
+
+- Read one engineering-blog architecture per week (e.g. Discord storing trillions of messages, Stripe's idempotency, Slack's job queue) and summarize it in 5 bullet points in `notes/10-system-design/`.
+- Read *Designing Data-Intensive Applications* cover to cover by the end of the plan, not just the assigned chapters.
+- Explore the System Design Primer repository (github.com/donnemartin/system-design-primer) for gaps.

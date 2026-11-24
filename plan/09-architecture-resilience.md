@@ -52,3 +52,9 @@ In Go:
 3. JWT vs server-side sessions: how do you log a user out everywhere with JWTs?
 4. Explain a circuit breaker's states and what metrics drive it.
 5. Design the API for a multi-step checkout so a mobile client on a flaky network can't double-charge.
+
+## Beyond the interview
+
+- Read Martin Fowler's articles on Microservices, the Strangler Fig application, and "MonolithFirst" (martinfowler.com).
+- Read *Learning Domain-Driven Design* — Vlad Khononov (more practical than the original DDD book).
+- Write an ADR for a real decision your current team is facing, and share it with the team.

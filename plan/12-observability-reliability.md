@@ -42,3 +42,9 @@ senior questions. Good answers come from a structured method, not guesswork.
 3. It's 2am: error rate jumped from 0.1% to 5% after no deploy. Walk through your first 15 minutes.
 4. What's metric cardinality, and how can a single label take down Prometheus?
 5. How does a trace ID get from a Node service, through SQS, into a Go consumer?
+
+## Beyond the interview
+
+- Read *Observability Engineering* — Charity Majors, Liz Fong-Jones, George Miranda: ch. 1–7.
+- Read 3 public postmortems (e.g. from Cloudflare, GitHub, AWS) and note the trigger, detection, mitigation, and root cause of each.
+- Propose and define one SLO for a real service at work.

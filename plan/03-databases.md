@@ -57,3 +57,9 @@ Run Postgres in Docker (`docker run -e POSTGRES_PASSWORD=pw -p 5432:5432 postgre
 6. After a user updates their profile, they reload and see old data. Why, and how do you fix it?
 7. How do you add a `NOT NULL` column to a 500M-row table with zero downtime?
 8. How would you choose a shard key for a multi-tenant SaaS app?
+
+## Beyond the interview
+
+- Read Postgres's own explanation of its MVCC and VACUUM internals in *The Internals of PostgreSQL* (interdb.jp, free).
+- Watch the CMU Database Systems lectures by Andy Pavlo (free on YouTube): the storage, indexing, and concurrency control lectures.
+- Find the 3 slowest queries in a real system you work on (`pg_stat_statements` or MySQL slow query log) and write up how you'd fix each.

@@ -49,3 +49,9 @@ are expected to own their services in production, not hand them over.
 3. Your pod restarts every few hours with exit code 137. Investigate.
 4. Walk through what happens from `kubectl apply` to a running pod.
 5. How do you deploy a database schema change and a code change safely together?
+
+## Beyond the interview
+
+- Build a container by hand with `unshare` and `chroot` (Liz Rice's "Containers from Scratch" talk walks through this in Go).
+- Do "Kubernetes the Hard Way" (Kelsey Hightower) once to understand every control plane component.
+- Read the AWS Well-Architected Framework's Reliability and Security pillars.

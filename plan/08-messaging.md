@@ -49,3 +49,9 @@ Use LocalStack (`docker run -p 4566:4566 localstack/localstack`) or a real AWS f
 3. Kafka vs SQS for an order events stream consumed by 5 different services: which and why?
 4. How do you keep order for events of the same user while still processing users in parallel?
 5. A marketing blast of 10M notifications delays OTP messages. Redesign it.
+
+## Beyond the interview
+
+- Read "The Log: What every software engineer should know about real-time data's unifying abstraction" — Jay Kreps (LinkedIn engineering blog).
+- Read the AWS Builders' Library article "Avoiding insurmountable queue backlogs".
+- Write a blog post or internal doc about lessons from your SQS notification system. Writing it forces clarity, and it's a great interview artifact.

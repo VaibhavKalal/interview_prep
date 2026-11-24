@@ -46,3 +46,9 @@ In Go:
 3. What's the difference between a mutex and a semaphore? Give a backend use for each.
 4. Your container is killed with exit code 137. What happened and how do you investigate?
 5. Explain a deadlock you could create in a database, not just in code.
+
+## Beyond the interview
+
+- Read a short `epoll` echo server in C (many exist online) to see what Node's libuv and Go's netpoller wrap.
+- Read Julia Evans' zines on Linux internals and `strace` (jvns.ca); use `strace` on a real service at work (in a safe environment).
+- Learn `perf` basics and generate a flame graph of a CPU-heavy program (Brendan Gregg's flame graph page).

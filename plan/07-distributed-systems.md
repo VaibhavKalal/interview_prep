@@ -46,3 +46,9 @@ say *why* a design works instead of only *what* it is.
 3. Why can't you use timestamps from different servers to order events reliably?
 4. What problem does Raft solve, and what happens during a network partition?
 5. "We need exactly-once delivery." How do you respond?
+
+## Beyond the interview
+
+- Do the MIT 6.5840 (formerly 6.824) Distributed Systems labs in Go: MapReduce, then Raft. This is the single best way to truly understand consensus.
+- Read the Google Spanner paper's introduction and the TrueTime section to see how clocks are handled at Google scale.
+- Read one Jepsen report end to end and explain its main finding in your notes.

@@ -51,3 +51,9 @@ Build in Go with only the standard library:
 4. What does HTTP/2 fix compared to HTTP/1.1, and what problem does it still have that HTTP/3 fixes?
 5. A client retries a `POST /payments` after a timeout. What can go wrong and how do you prevent it?
 6. L4 vs L7 load balancer: when do you need L7?
+
+## Beyond the interview
+
+- Read Cloudflare's blog posts on HTTP/3 and QUIC, and on how they handle DDoS at the network layer.
+- Capture your own HTTPS request with Wireshark (or `tcpdump` + Wireshark) and identify the TCP handshake, TLS ClientHello/ServerHello, and HTTP/2 frames.
+- Read the source of Go's `net/http` server loop (`server.go`, `func (srv *Server) Serve`) to see `accept` → goroutine per connection.

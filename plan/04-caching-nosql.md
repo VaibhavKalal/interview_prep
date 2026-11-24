@@ -47,3 +47,9 @@ bugs (stale data, stampedes). NoSQL choices come up in every system design round
 3. Why does a Redis-based lock need a fencing token to be safe?
 4. LSM tree vs B-tree: which suits a write-heavy event log, and why?
 5. Design the DynamoDB keys for "get all orders of a customer, newest first".
+
+## Beyond the interview
+
+- Read the Amazon Dynamo paper (2007) — the origin of leaderless replication and consistent hashing in practice.
+- Read Redis's source for its event loop (`ae.c`): it's small and readable.
+- Read Facebook's "Scaling Memcache at Facebook" paper (NSDI 2013) for real-world cache invalidation and thundering herd fixes (leases).

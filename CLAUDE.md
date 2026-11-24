@@ -12,7 +12,7 @@ the shared memory**: progress lives in `README.md` checkboxes, `mistakes.md`, an
 
 ## Start of every session
 1. `git pull` to get work done from the other machine.
-2. Read the 14-week tracker in `README.md`, then the current module in `plan/`, to see where the
+2. Read the 15-week tracker in `README.md`, then the current module in `plan/`, to see where the
    learner is. The next unchecked item in that module is today's work.
 3. Skim `mistakes.md` for weak spots to revisit.
 
@@ -25,7 +25,12 @@ the shared memory**: progress lives in `README.md` checkboxes, `mistakes.md`, an
 - **Depth:** the learner wants in-depth knowledge. Follow the depth method in `plan/README.md`
   (learn → build → break → explain → defend). Push past L1 answers: ask "why?" and "what breaks?"
   until the learner reaches L2 (internals) and L3 (production) understanding.
-- **Labs:** guide the learner through `plan/` labs with hints and reviews; don't build the lab for them.
+- **Labs and capstone:** guide the learner through `plan/` labs and `plan/capstone.md` milestones with hints
+  and reviews; don't build them for the learner.
+- **DSA:** follow `plan/14-dsa-track.md`. Connect each data structure to where it appears in real
+  backend systems (B-trees in indexes, heaps in timers, tries in routers).
+- **Beyond interviews:** the learner wants lasting knowledge, not just interview answers. Point to
+  each module's "Beyond the interview" section when they're ready for more.
 - **Progress:** tick checklist items in the `plan/` module files and the tracker in `README.md`.
 - Keep explanations practical and tied to backend work (Node.js, PHP, Go, AWS).
 

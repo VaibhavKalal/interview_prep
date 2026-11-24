@@ -52,3 +52,9 @@ languages on your CV. "I've used it for 4 years" must come with "and here's how 
 3. Your Node API's p99 latency jumped from 120ms to 2s after a deploy, but CPU looks normal. How do you investigate?
 4. How does your Node service shut down gracefully during a Kubernetes rolling deploy?
 5. Compare how Node, PHP-FPM, and Go each handle 1,000 concurrent slow requests (each waiting 1 second on a database).
+
+## Beyond the interview
+
+- Read libuv's design overview (docs.libuv.org, "Design overview") and match each event loop phase to the code.
+- Profile a real service at work with `--cpu-prof` and find one hot path worth optimizing.
+- Watch "What the heck is the event loop anyway?" (Philip Roberts, JSConf) and Bert Belder's talk on the Node.js event loop for the libuv side.
