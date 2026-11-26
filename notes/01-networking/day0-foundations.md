@@ -220,6 +220,37 @@ of trusted root CAs. The client checks the chain: server cert ← signed by inte
 **SNI:** one IP (one load balancer) can host many domains. The client puts the hostname in its
 first TLS message (ClientHello) so the server knows which certificate to send.
 
+**How the shared key is agreed: (EC)DHE, and why the secret never travels**
+
+In TLS 1.3 the key isn't *sent* (not even encrypted). Both sides *compute* it with Diffie-Hellman:
+
+```
+Public, known to everyone: a generator g and a big prime p
+
+Client picks secret a (never sent)         Server picks secret b (never sent)
+Client sends  A = g^a mod p   ─────────►
+                              ◄─────────   Server sends  B = g^b mod p
+Client computes B^a = g^(ab)               Server computes A^b = g^(ab)   ← same number
+```
+
+An eavesdropper sees `g`, `p`, `A`, and `B`, but getting `g^(ab)` from them requires solving the
+discrete logarithm problem, which is infeasible for big numbers. **ECDHE** is the same idea on
+elliptic curves (smaller keys, faster). The final **E = ephemeral**: `a` and `b` are fresh for
+every connection and thrown away afterwards. The result goes through a key derivation function
+to produce the symmetric keys (AES-GCM or ChaCha20).
+
+**So what is the certificate's private key for?** Only for **signing** the handshake, to prove
+"I am `api.example.com`" (authentication). It never encrypts the session key.
+
+**Forward secrecy:** if an attacker records traffic today and steals the server's private key
+next year, they **still can't decrypt** the recordings, because each session's key came from
+ephemeral secrets that no longer exist. With the stolen key they *can* impersonate the server
+from then on, so you revoke and rotate the certificate.
+
+Contrast with **TLS 1.2's RSA key exchange** (removed in 1.3): the client encrypted the secret
+with the server's public key, so a later key theft decrypted *every* recorded session. That's why
+TLS 1.3 made ephemeral key exchange mandatory.
+
 **Try it:** `openssl s_client -connect example.com:443 -servername example.com </dev/null` shows the cert chain and TLS version.
 
 ---
@@ -302,9 +333,9 @@ idea is: **who is waiting, and on what?**
 
 ## Check yourself
 
-1. A router forwards your HTTPS packet. Which headers can it read, and which bytes can't it read?
+1. A router forwards your HTTPS packet. Which headers can it read, and which bytes can't it read? - It can read upto L3 i.e. IP and cant read the process port
 2. Your Go service connects to one Postgres server at `10.0.2.9:5432`. Why can't it have more than
-   ~28k connections open to it, and what in the 4-tuple would you change to get more?
+   ~28k connections open to it, and what in the 4-tuple would you change to get more? - For each outgoing connection a ephemeral port is assigned, the number of connection are directly proportional number of ports vacaint. we can increase the port size to get more 4-tuple. 
 3. Your users are in India and your API is in `us-east-1`. Estimate the time for a cold HTTPS request,
-   then for a request on a reused connection. Which single change helps cold requests most?
-4. Why does TLS use asymmetric crypto for the handshake but symmetric crypto for the data?
+   then for a request on a reused connection. Which single change helps cold requests most? - Lets assume RTT for India and us-east-1 is 200ms, then on a cold start; DNS 200ms, TCP 200ms, TLS 200ms, Application/Http 200ms in total 800ms. But incase of reused connection DNS, TCP, TLS are not required only Application/Http 200ms is needed so 200ms. Reducing RTT helps cold requests most
+4. Why does TLS use asymmetric crypto for the handshake but symmetric crypto for the data? - asymmetric crypto is slow but allows stranges to agree on a secrete on a open network, hence it is used to share a shared secrete. this shared secrete uses symmetric crypto which is quick so that messages can be quickly encrypted and decrypted.

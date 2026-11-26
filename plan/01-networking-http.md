@@ -6,7 +6,7 @@ connection pool exhaustion, TLS errors, load balancer health checks, keep-alive 
 ## Checklist
 
 ### L1 — Use
-- [ ] Foundations: packets, layers, IP, ports, sockets, RTT, DNS, TLS, blocking I/O ([Day 0 notes](../notes/01-networking/day0-foundations.md))
+- [x] Foundations: packets, layers, IP, ports, sockets, RTT, DNS, TLS, blocking I/O ([Day 0 notes](../notes/01-networking/day0-foundations.md))
 - [x] The request lifecycle: DNS → TCP → TLS → HTTP → LB → app → DB ([Day 1 notes](../notes/01-networking/day1-request-lifecycle.md))
 - [ ] HTTP methods, status codes (know 200/201/204/301/302/304/400/401/403/404/409/422/429/500/502/503/504)
 - [ ] Headers: `Cache-Control`, `ETag`, `Authorization`, `Content-Type`, `Connection`, `X-Forwarded-For`
